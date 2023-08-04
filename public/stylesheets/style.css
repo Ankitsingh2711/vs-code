@@ -1,0 +1,199 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  font-family: gilroy;
+  color: #fff;
+}
+#main i{
+  cursor: pointer;
+}
+#main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+#left{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(54, 54, 54);
+}
+
+#right{
+  position: relative;
+  width: 80%;
+  height: 100%;
+  background-color: rgb(21, 21, 21);
+  color: #626262;
+  border-left: solid 1px #626262;
+  overflow: hidden;
+}
+#right>h3{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#selectOption{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  background-color: rgb(54, 54, 54);
+}
+#selectOption i{
+  font-size: 35px;
+  color: #626262;
+  }
+#explorer{
+  width: 80%;
+  height: 100%;
+  background-color: rgb(29, 29, 29);
+}
+#top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+}
+#bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 15%;
+  margin-bottom: 10px;
+}
+#selectOption i:hover{
+  color: #fff;
+  cursor: pointer;
+}
+#menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0% 10px;
+  width: 100%;
+  height: 5%;
+}
+#folders{
+  width: 100%;
+  height: 95%;
+}
+#folderName{
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  padding: 0% 5px;
+  width: 100%;
+  height: 5%;
+}
+.forms{
+ padding: 5px 5px; 
+}
+.forms form{
+  margin: 5px 10px;
+}
+form input{
+  display: none;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 4px;
+}
+.fileFolder{
+  display: flex;
+  width: 100%;
+  margin: 10px 10px;
+}
+#hide{
+  display: none;
+  margin-left: 70px;
+}
+.fileFolder:hover #hide{
+  display: flex;
+}
+.txtIcn{
+  display: flex;
+  align-items: center;
+}
+.txtIcn a{
+  text-decoration: none;
+  color: #bbbbbb;
+}
+#topNav{
+  position: absolute;
+  width: 100%;
+  background-color : #626262 ;
+  height : 5%;
+}
+#opened{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 10%;
+  height: 100%;
+  background-color: #505050;
+  color: #fff;
+}
+#opened h5{
+  font-weight: 400;
+}
+.rightScroll{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.editor {
+  display: inline-flex;
+  gap: 10px;
+  font-family: monospace;
+  line-height: 21px;
+  /* background: #282a3a; */
+  border-radius: 2px;
+  padding: 20px 10px;
+  margin-top: 2%;
+  width: 99%;
+}
+
+textarea {
+  background-color:transparent;
+  line-height: 21px;
+  overflow-y: hidden;
+  color: #FFF;
+  min-width: 500px;
+  outline: none;
+  border: 0;
+  resize: none;
+  width: 100%;
+}
+.line-numbers {
+  width: 20px;
+  text-align: right;
+}
+
+.line-numbers span {
+  counter-increment: linenumber;
+}
+
+.line-numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: #506882;
+}

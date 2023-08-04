@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Studio Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+
+<body>
+  <div id="main">
+    <div id="left">
+      <div id="selectOption">
+        <div id="top">
+          <i class="ri-folders-line"></i>
+          <i class="ri-search-line"></i>
+          <i class="ri-git-branch-line"></i>
+          <i class="ri-bug-line"></i>
+          <i class="ri-dropbox-line"></i>
+        </div>
+        <div id="bottom">
+          <i class="ri-account-circle-line"></i>
+          <i class="ri-settings-3-line"></i>
+        </div>
+      </div>
+      <div id="explorer">
+        <div id="menu">
+          <h5>Explorer</h5>
+          <i class="ri-more-line"></i>
+        </div>
+        <div id="folders">
+          <div id="folderName">
+            <h5>Folder/file Name</h5>
+            <div id="Foldericn">
+              <i id="fileicon" class="ri-file-line"></i>
+              <i id="foldericon" class="ri-folder-line"></i>
+              <i id="refresh" class="ri-restart-line"></i>
+            </div>
+          </div>
+          <div class="forms">
+            <form action="/createfile">
+              <input id="fileform" type="text" name="filename" placeholder="file name">
+            </form>
+            <form action="/createfolder">
+              <input id="folderform" type="text" name="foldername" placeholder="folder name">
+            </form>
+          </div>
+          <div id="files">
+            <% files.forEach(function(file){ %>
+              <% if(file.folderHai===true){ %>
+                <div class="fileFolder">
+                  <div class="txtIcn">
+                    <i class="ri-arrow-right-s-line"></i>
+                    <!-- <a href="/filename/<%=file.name%>"><h6> -->
+                      <%= file.name %></h6>
+                    <!-- </a> -->
+                  </div>
+                  <div id="hide" class="txtIcn">
+                    <i class="ri-pencil-line"></i>
+                    <i class="ri-delete-bin-5-line"></i>
+                  </div>
+                </div>   
+             <% } else{ %>
+              <div class="fileFolder">
+                <div class="txtIcn">
+                  <i class="ri-bar-chart-horizontal-line"></i> 
+                  <a href="/filename/<%=file.name%>"><h6><%= file.name %></h6></a>
+                </div>
+                <div id="hide" class="txtIcn">
+                  <i class="ri-pencil-line"></i>
+                  <i class="ri-delete-bin-5-line"></i>
+                </div>
+              </div>
+            <% } %>
+            <% })%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <h3>Visual Studio Code</h3>
+    </div>
+  </div>
+
+  <script>
+    function onoff(){
+      document.querySelectorAll("form input").forEach(function(e){
+        e.style.display="none"
+      })
+    }
+
+    document.querySelector("#fileicon")
+    .addEventListener("click",function(){
+      onoff();
+      document.querySelector("#fileform").style.display = "initial";
+    })
+    
+    document.querySelector("#foldericon")
+    .addEventListener("click",function(){
+      onoff();
+      document.querySelector("#folderform").style.display = "initial";
+    })
+    
+    window.addEventListener("keydown",function(dets){
+      if(dets.keyCode===27){
+        onoff();
+        document.querySelectorAll("form input")
+        .forEach(function(elem){
+          elem.value = "";
+        })
+      }
+    })
+    
+   
+  </script>
+</body>
+
+</html>
